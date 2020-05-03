@@ -1,30 +1,22 @@
 {
-    "private": true,
-    "watch": {
-        "tailwind": [
-            "src/*.html",
-            "src/css/style.tailwind.css",
-            "src/css/tailwind.config.js"
-        ]
-    },
     "scripts": {
         "clean": "rm -rf dist .cache",
-        "tailwind": "npx tailwindcss build src/css/style.tailwind.css -c src/css/tailwind.config.js -o src/css/style.css",
-        "file-watch": "npm-watch",
+        "style": "postcss src/css/style.tailwind.css --output src/css/style.css",
+        "watch:dev": "onchange 'src' -- npm run style",
         "parcel:build": "parcel build src/index.html --public-url ./",
         "parcel:serve": "parcel src/index.html --open",
-        "prod": "npm-run-all -s clean tailwind parcel:build",
-        "watch": "npm-run-all -s clean -p file-watch parcel:serve"
+        "prod": "npm-run-all -s clean style parcel:build",
+        "watch": "npm-run-all -s clean -p watch:dev parcel:serve"
     },
-    "devDependencies": {
-        "@fullhuman/postcss-purgecss": "^2.0.6",
-        "npm-watch": "^0.6.0",
-        "postcss": "^7.0.27",
+    "dependencies": {
+        "npm-run-all": "^4.1.5",
+        "parcel-bundler": "^1.12.4",
         "postcss-cli": "^7.1.0",
+        "postcss-import": "^12.0.1",
         "tailwindcss": "^1.4.1",
         "typescript": "^3.8.3"
     },
-    "dependencies": {
-        "npm-run-all": "^4.1.5"
+    "devDependencies": {
+        "onchange": "^7.0.2"
     }
 }
