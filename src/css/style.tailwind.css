@@ -1,10 +1,11 @@
-/* purgecss start ignore */
 @import "tailwindcss/base";
 @import "tailwindcss/components";
-/* purgecss end ignore */
 @import "tailwindcss/utilities";
 
 /* custom css */
 body{
   border: 10px solid white;
+}
+::selection {
+  background: yellow;
 }

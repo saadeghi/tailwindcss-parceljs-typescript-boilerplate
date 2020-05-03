@@ -21,7 +21,7 @@
         "npm-watch": "^0.6.0",
         "postcss": "^7.0.27",
         "postcss-cli": "^7.1.0",
-        "tailwindcss": "^1.2.0",
+        "tailwindcss": "^1.4.1",
         "typescript": "^3.8.3"
     },
     "dependencies": {
