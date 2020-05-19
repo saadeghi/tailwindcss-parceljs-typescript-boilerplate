@@ -1,4 +1,4 @@
-# TailwindCSS + ParcelJS + TypeScript boilerplate
+# Tailwind CSS + ParcelJS + TypeScript boilerplate
 
 ## 🏄‍♀️ How to use
 - Use `npm run prod` to build everything from `/src` to `/dist`
